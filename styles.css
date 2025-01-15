@@ -1,0 +1,175 @@
+
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: linear-gradient(135deg, #71b5ff, #fad0c4);
+    /* background-image: url(https://lottie.host/embed/87f5754e-968e-4b74-bf08-f3118dd58518/jo7tQLDdAC.json); */
+}
+
+.todo-container {
+    background: #ffffff;
+    padding: 30px 25px;
+    border-radius: 12px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    width: 60%;
+    height: 80%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    animation: fadeIn 1s ease-in-out;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+h1 {
+    margin: 0;
+    font-size: 28px;
+    color: #333;
+}
+
+.date-display {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 16px;
+    color: #555;
+}
+
+.date-display img {
+    width: 24px;
+    height: 24px;
+}
+
+input[type="text"] {
+    width: 80%;
+    padding: 12px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 16px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    outline: none;
+    transition: 0.3s ease;
+}
+
+input[type="text"]:focus {
+    border-color: #9eeb34;
+    box-shadow: 0 4px 12px rgba(158, 235, 52, 0.4);
+}
+
+.task-status {
+    margin: 15px 0;
+    font-size: 16px;
+    color: #555;
+}
+
+.progress-bar {
+    width: 100%;
+    height: 8px;
+    background: #ddd;
+    border-radius: 4px;
+    overflow: hidden;
+    margin-top: 5px;
+}
+
+.progress-bar #progress {
+    width: 0;
+    height: 100%;
+    background: #9eeb34;
+    transition: width 0.3s ease-in-out;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    overflow-y: auto;
+    flex-grow: 1;
+}
+
+li {
+    padding: 12px 10px;
+    margin: 10px 0;
+    background: #f9f9f9;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    animation: slideIn 0.4s ease forwards;
+    transition: all 0.3s ease;
+}
+
+li.completed {
+    background: #9eeb34;
+    color: white;
+}
+
+li .task-content {
+    flex-grow: 1;
+    margin-left: 10px;
+}
+
+li button {
+    background-color: #ff6b6b;
+    color: #fff;
+    border: none;
+    padding: 6px 12px;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+li button:hover {
+    background-color: #e63946;
+}
+
+li input[type="checkbox"] {
+    cursor: pointer;
+}
+
+#deleteGifContainer img {
+    display: none;
+    max-width: 100%;
+    margin-top: 10px;
+}
+
+/* Confetti canvas */
+#confettiCanvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 999;
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
