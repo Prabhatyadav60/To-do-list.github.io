@@ -1,6 +1,6 @@
 
 function saveTasks(tasks) {
-    const expiryTime = new Date().getTime() + 24 * 60 * 60 * 1000; // 1 day in ms
+    const expiryTime = new Date().getTime() + 240000 * 60 * 60 * 1000; 
     const data = { tasks, expiry: expiryTime };
     localStorage.setItem('todoList', JSON.stringify(data));
 }
